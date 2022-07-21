@@ -1,0 +1,96 @@
+<div class="hc d-flex justify-content-center">
+  <div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-7">
+        <div class="card p-3 py-4">
+          <div class="text-center">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+              <div class="hovereffect">
+                <img
+                  class="img-responsive w-75"
+                  src="https://cdn-icons-png.flaticon.com/512/219/219986.png?w=740&t=st=1658376525~exp=1658377125~hmac=b23a536632fbd7386804305fd7333c443a147703c32b3c03c9294561ce534111"
+                  alt=""
+                />
+                <div class="overlay">
+                  <h2>Update Profile</h2>
+                  <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="info" href="#">edit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-3" *ngFor="let item of datau">
+            <span class="bg-secondary p-1 px-4 rounded text-white"
+              >user id--> {{ userdata.userId }}</span
+            >
+            <h5 class="mt-2 mb-0">{{ item.name }}</h5>
+            <span class="text-info">{{ item.email}}</span>
+
+            <div class="px-4 mt-1">
+              <p class="fonts">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                consequuntur qui similique obcaecati tempore culpa, eos fugiat
+                vitae vero. Vel enim inventore nulla soluta asperiores ab,
+                reiciendis aperiam accusamus sint!
+              </p>
+            </div>
+
+            <div class="buttons">
+              <button class="btn btn-outline-primary px-4" routerLink="/addproduct">add product</button>
+              <button routerLink="/con_order"   class="btn btn-primary px-4 ms-3">orders</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ..................................................... -->
+<!-- ..................................................... -->
+<!-- ..................................................... -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title text-warning" id="staticBackdropLabel">update profile info</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+          <form>
+            <form [formGroup]="form" (submit)="editfun()">
+              <div class="form-group">
+                  <label  class="form-control-label text-muted">name</label>
+                  <input formControlName="name" [ngModel]=" userdata.username" type="text" id="name" name="name"   class="form-control">
+              </div>
+
+              <div class="form-group">
+                  <label class="form-control-label text-muted">email</label>
+                  <input [ngModel]=" userdata.email" formControlName="email" type="email" id="psw" name="psw" placeholder="email" class="form-control">
+              </div>
+
+              <div class="row justify-content-center my-3 px-3">
+                  <button type="submit" data-bs-dismiss="modal"  class="btn btn-outline-success py-1'">Edit </button>
+              </div>
+            </form>
+
+
+
+          </form>
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

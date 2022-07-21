@@ -1,0 +1,28 @@
+
+
+<!-- special products -->
+<section id = "special" class = "py-5">
+  <div class = "container">
+      <div class = "title text-center py-5">
+          <h2 class = "position-relative d-inline-block">New Collection</h2>
+      </div>
+
+      <div class = "special-list row g-0" >
+          <div class = "col-md-6 col-lg-4 col-xl-3 p-2" *ngFor="let p of pro">
+              <div class = "special-img position-relative overflow-hidden">
+                  <img src = "https://www.clickbank.com/wp-content/uploads/2021/11/Sell-Your-Product.png" class = "w-100">
+                  <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                      <i class = "fas fa-heart"></i>
+                  </span>
+              </div>
+              <div class = "text-center">
+                  <p class = "text-capitalize mt-3 mb-1">{{p.name}}</p>
+                  <span class = "fw-bold d-block">{{p.price|currency}}</span>
+                  <span class = "fw-bold d-block"> <span class="text-danger">Seller : </span> {{p.sel_name}}</span>
+                  <a  (click)="addtoorder(p.pro_id)"  class = "btn btn-primary mt-3">Add to Cart</a>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</section>
